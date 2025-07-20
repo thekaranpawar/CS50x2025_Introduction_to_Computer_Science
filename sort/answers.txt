@@ -1,0 +1,12 @@
+sort1 uses: Bubble Sort
+How do you know?
+Because sort1 was very fast when sorting the already sorted file (sorted50,000.txt — only 0.644 seconds), but it became very slow on the reversed file (reversed50,000.txt — 5.756 seconds). This shows that the algorithm works well on sorted data but badly on reversed data. Bubble sort behaves like this, so that’s why sort1 is bubble sort.
+
+sort2 uses: Merge Sort
+How do you know?
+Sort2 finished sorting the reversed50,000.txt file in just 0.459 seconds, which is much faster than the other sorts. Merge sort always has good performance (O(n log n)) no matter how the data is arranged — sorted, reversed, or random. That’s why sort2 is using merge sort.
+
+sort3 uses: Selection Sort
+How do you know?
+Sort3 took almost the same time for both reversed (4.021s) and sorted (3.574s) files, and it was the slowest overall. This matches how selection sort works, because it always takes the same time (O(n²)) no matter how the input is. So, sort3 is selection sort.
+

@@ -1,0 +1,19 @@
+body{
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+h1{
+    color: #007bff;
+}
+ul li{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+footer{
+    background-color: #e9ecef;
+    color: #333;
+}
+#surpriseBtn{
+    font-weight: bold;
+}
+

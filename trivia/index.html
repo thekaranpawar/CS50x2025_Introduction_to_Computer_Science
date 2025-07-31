@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What is the capital city of France?</h3>
+                <button class="choice">Berlin</button>
+                <button class="choice">Madrid</button>
+                <button class="choice correct">Paris</button>
+                <p id="feedback1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Who wrote the play "Romeo and Juliet"?</h3>
+                <input type="text" id="free-response">
+                <button id="check-answer">Check Answer</button>
+                <p id="feedback2"></p>
+            </div>
+        </div>
+        <script>
+        const buttons = document.querySelectorAll('.choice');
+        const feedback1 = document.getElementById('feedback1');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Reset button colors
+                buttons.forEach(btn => btn.style.backgroundColor = '');
+
+                if (button.classList.contains('correct')) {
+                    button.style.backgroundColor = 'green';
+                    feedback1.textContent = 'Correct!';
+                } else {
+                    button.style.backgroundColor = 'red';
+                    feedback1.textContent = 'Incorrect';
+                }
+            });
+        });
+
+        // PART 2: Free-response logic
+        const input = document.getElementById('free-response');
+        const checkBtn = document.getElementById('check-answer');
+        const feedback2 = document.getElementById('feedback2');
+
+        checkBtn.addEventListener('click', () => {
+            const answer = input.value.trim().toLowerCase();
+
+            if (answer === 'william shakespeare' || answer === 'shakespeare') {
+                input.style.backgroundColor = 'lightgreen';
+                feedback2.textContent = 'Correct!';
+            } else {
+                input.style.backgroundColor = '#f08080';
+                feedback2.textContent = 'Incorrect';
+            }
+        });
+        </script>
+    </body>
+</html>
